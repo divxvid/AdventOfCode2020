@@ -1,8 +1,8 @@
-mod day2;
+mod day3;
 
 use std::{fs, time::SystemTime};
 
-const FILE_PATH: &str = "./data/input02.txt";
+const FILE_PATH: &str = "./data/input03.txt";
 
 fn timeit<F: Fn() -> T, T>(f: F) -> T {
     let start = SystemTime::now();
@@ -15,6 +15,6 @@ fn timeit<F: Fn() -> T, T>(f: F) -> T {
 
 fn main() {
     let input_data = fs::read_to_string(FILE_PATH).expect("File Not Found");
-    println!("Part one output: {}", timeit(|| day2::part_one(&input_data)));
-    println!("Part two output: {}", timeit(|| day2::part_two(&input_data)));
+    println!("Part one output: {}", timeit(|| day3::part_one(&input_data)));
+    println!("Part two output: {}", timeit(|| day3::part_two(&input_data)));
 }
