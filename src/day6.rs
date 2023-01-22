@@ -19,10 +19,7 @@ pub fn part_two(input: &str) -> String {
             let people: Vec<&str> = group.split_whitespace().collect();
             ('a'..='z')
                 .filter(|&ch| {
-                    people.iter().all(|person| {
-                        let res = person.contains(ch);
-                        res
-                    })
+                    people.iter().all(|person| person.contains(ch))
                 })
                 .count()
         })
