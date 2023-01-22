@@ -16,9 +16,10 @@ pub fn part_one(input: &str) -> String {
 pub fn part_two(input: &str) -> String {
     input.split("\n\n")
         .map(|group| {
+            let people: Vec<&str> = group.split_whitespace().collect();
             ('a'..='z')
                 .filter(|&ch| {
-                    group.split_whitespace().all(|person| {
+                    people.iter().all(|person| {
                         let res = person.contains(ch);
                         res
                     })
